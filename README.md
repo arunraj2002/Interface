@@ -1,4 +1,6 @@
-# Interface
+### EX NO : 09
+### DATE  : 01.06.2022
+# <p align="center">Interface</p>
 
 ## Aim:
 To Develop a small bank application by declaring deposit() and withdrawal() as abstract methods in the interface.  Get the choice from the user whether to perform withdrawal or deposit operation. After the operation completes, display the balance amount
@@ -21,56 +23,40 @@ Use while loop and and switch case to Get the choice from the user whether to pe
 
 ### step 5:
 After performing the functions display the remaining balance of the user.
+<br/><br/><br/><br/>
 
 ## Program:
 ```c#
 using System;
-
-namespace inter
-{
-    public interface bank
-    {
+namespace inter{
+    public interface bank{
         void deposit();
         void withdraw();
     }
-    public class operation : bank
-    {
+    public class operation : bank{
         public int amount, ch, balance = 5000;
-        public operation()
-        {
+        public operation(){
             Console.WriteLine("Enter the Choice\n1.deposit 2.Withdraw");
             ch = Convert.ToInt32(Console.ReadLine());
-            if (ch == 1)
-            {
-                deposit();
-            }
-            else
-            {
-                withdraw();
-            }
+            if (ch == 1) deposit();  
+            else withdraw();   
         }
-        public void withdraw()
-        {
+        public void withdraw(){
             int amount = Convert.ToInt32(Console.ReadLine());
             balance = balance - amount;
             Console.WriteLine("Balance="+balance);
         }
-        public void deposit()
-        {
+        public void deposit(){
             int amount = Convert.ToInt32(Console.ReadLine());
             balance = balance + amount;
             Console.WriteLine("Balance="+balance);
         }
-
     }
-    public class banking
-    {
-        public static void Main()
-        {
+    public class banking{
+        public static void Main(){
             operation o = new operation();
         }
     }
-
 }
 ```
 ## Output:
